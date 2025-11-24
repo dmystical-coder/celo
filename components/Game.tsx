@@ -13,7 +13,9 @@ export const Game: React.FC = () => {
       <GuessInput />
       <Keyboard onKeyPress={() => {}} />
       <div className="game-status">
-        {status === 'won' && <p>Congratulations! You guessed the word: {solution}</p>}
+        {status === 'won' && (
+          <p>Congratulations! You guessed the word: {solution}</p>
+        )}
         {status === 'lost' && <p>Game Over! The word was: {solution}</p>}
         {(status === 'won' || status === 'lost') && (
           <button onClick={resetGame}>Restart</button>

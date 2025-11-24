@@ -11,7 +11,10 @@ interface KeyboardProps {
   keyFeedback?: Record<string, 'correct' | 'present' | 'absent'>;
 }
 
-export const Keyboard: React.FC<KeyboardProps> = ({ onKeyPress, keyFeedback = {} }) => {
+export const Keyboard: React.FC<KeyboardProps> = ({
+  onKeyPress,
+  keyFeedback = {},
+}) => {
   return (
     <div className="keyboard">
       {KEYS.map((row, rowIdx) => (

@@ -20,10 +20,14 @@ export const useGame = () => {
 import { pickRandomWord, getFeedback } from '../utils/wordle';
 import wordList from '../utils/words';
 
-export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const GameProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [solution, setSolution] = useState(() => pickRandomWord(wordList));
   const [guesses, setGuesses] = useState<string[]>([]);
-  const [feedbacks, setFeedbacks] = useState<Array<Array<'correct' | 'present' | 'absent'>>>([]);
+  const [feedbacks, setFeedbacks] = useState<
+    Array<Array<'correct' | 'present' | 'absent'>>
+  >([]);
   const [status, setStatus] = useState<'playing' | 'won' | 'lost'>('playing');
 
   const addGuess = (guess: string) => {
@@ -43,7 +47,9 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   return (
-    <GameContext.Provider value={{ guesses, feedbacks, solution, status, addGuess, resetGame }}>
+    <GameContext.Provider
+      value={{ guesses, feedbacks, solution, status, addGuess, resetGame }}
+    >
       {children}
     </GameContext.Provider>
   );

@@ -26,7 +26,10 @@ export const GuessInput: React.FC = () => {
         aria-label="Guess input"
         autoFocus
       />
-      <button type="submit" disabled={status !== 'playing' || guess.length !== 5}>
+      <button
+        type="submit"
+        disabled={status !== 'playing' || guess.length !== 5}
+      >
         Guess
       </button>
     </form>
