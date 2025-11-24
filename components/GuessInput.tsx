@@ -23,6 +23,8 @@ export const GuessInput: React.FC = () => {
         disabled={status !== 'playing'}
         pattern="[A-Z]{5}"
         title="Enter a 5-letter word"
+        aria-label="Guess input"
+        autoFocus
       />
       <button type="submit" disabled={status !== 'playing' || guess.length !== 5}>
         Guess
